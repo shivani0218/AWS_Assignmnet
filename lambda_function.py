@@ -40,7 +40,7 @@ def send_email(recipient, body, subject):
 
 
 def lambda_handler(event, context):
-    # Get instances without Name and Environment Tags
+    # Get all running ec2 instances 
     missing_tags = []
     reservations = ec2_client.describe_instances(
         Filters=[
